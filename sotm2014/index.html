@@ -1,0 +1,162 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div>OSM & Esri <br/> <small>State of the Map 2014</small></div>
+<div><em>me: @cwhelm</em></div>
+<div>ArcGIS OSM Editor <em><a href="https://github.com/Esri/arcgis-osm-editor">https://github.com/Esri/arcgis-osm-editor</a></em></div>
+
+<div>Esri Community Maps:<em>respect the OSM community</em></div>
+
+<div>Next week:<em>OSM data in Africa Basemap</em></div>
+
+<div><em>Koop</em></div>
+<div>GeoJSON<em> as FeatureServices</em></div>
+<div><em>ETL</em></div>
+<div><img src="./geocommons.jpeg"/> <em>Geocommons!!</em> </div>
+
+<div>ETL <em>for APIs</em></div>
+<div>ETL <em>for Open Data</em></div>
+<div><img src="./AGOD.jpeg" width="200"/></div>
+<div><em>Github</em> <a target="_blank" href="https://koop.dc.esri.com/github">https://koop.dc.esri.com/gist</a></div>
+<div><em>Gists</em> <a target="_blank" href="https://koop.dc.esri.com/gist">https://koop.dc.esri.com/gist</a></div>
+<div><em>Socrata</em> <a target="_blank" href="https://koop.dc.esri.com/socrata">https://koop.dc.esri.com/socrata</a></div>
+<div><em>also</em> FeatureService <em>proxy</em> from ArcGIS Online</div>
+<div>Exports <em>geojson, kml, csv, shp</em> </div>
+<div>Also it's <em>R & D</em></div>
+<div><img src="./vtiles.jpeg"/> Vector Tiles <3 </div>
+<div>UTF Grids</div>
+<div>PNG Tiles <em>(CartoCSS)</em></div>
+<div>Mapnik <em>Vector</em> Tiles!</div>
+<div>any. geo. <em>api.</em> </div>
+<div>any. geo. <em>data.</em> </div>
+<div>Raw Data?</div>
+<div>Climate Data</div>
+<div><img src="./climate1.jpeg"/> <em>vector tiles</em> </div>
+<div><img src="./climate2.jpeg"/> <em>viz'd</em> </div>
+
+<div>Finally <em>OSM</em></div>
+<div>Discovery, exploration, & <em>direct access</em></div>
+<div><em>for </em>end users</div>
+<div>1. Ingest the planet <em> w/osm2pgsql</em></div>
+<div>2. API Structure?</div>
+<div>Counting the data <em>by area</em></div>
+
+<div>Points, Lines, Polygons</div>
+<div><em>Points</em> <a target="_blank" href="http://koop.dc.esri.com/osm/points">http://koop.dc.esri.com/osm/points</a></div>
+<div><em>Lines</em> <a target="_blank" href="http://koop.dc.esri.com/osm/lines">http://koop.dc.esri.com/osm/lines</a></div>
+<div><em>Polygons</em> <a target="_blank" href="http://koop.dc.esri.com/osm/polygons">http://koop.dc.esri.com/osm/polygons</a></div>
+
+<div>Drilling down...</div>
+
+<div><em>Points by </em>State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/count">http://koop.dc.esri.com/osm/points/state/count</a></div>
+<div><em>Points by </em>County <a target="_blank" href="http://koop.dc.esri.com/osm/points/county/count">http://koop.dc.esri.com/osm/points/county/count</a></div>
+
+<div>Go further</div>
+
+<div><em>Bus Stations by</em>State <a target="_blank" href="http://localhost:1337/osm/points/state/Colorado?where=amenity=%27pub%27">http://localhost:1337/osm/points/state/Colorado?where=amenity='pub'</a></div>
+<div><em>Bus Stations by</em>State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/bus_station">https://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/bus_station</a></div>
+
+<div>Discovery?</div>
+
+<div>Distinct <em>values</em><a target="_blank" href="http://koop.dc.esri.com/osm/points/distinct/amenity">http://koop.dc.esri.com/osm/points/distinct/amenity</a></div>
+
+<div>Table <em>fields </em><a target="_blank" href="http://koop.dc.esri.com/osm/points/fields">http://koop.dc.esri.com/osm/points/fields</a></div>
+
+<div>Access <em>GeoJSON</em></div>
+
+<div><em>Cafes in </em>Colorado <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/cafe?limit=10">http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/cafe</a></div>
+<div><em>Cafes in </em>Boulder <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe?limit=10">http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe</a></div>
+
+<div>piping to geojsonio is <em>the shit</em></div>
+
+<div>curl http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe?limit=50 | geojsonio </div>
+
+<div>download as <em>.kml, .csv, .zip</em></div>
+
+<div>We can also build a UI <a href="http://chelm.github.io/o.skoop.m/">http://chelm.github.io/o.skoop.m/</a></div>
+
+<div>Open Source <a href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></div>
+<div><em>me: @cwhelm</em></div>
