@@ -90,16 +90,24 @@ window.onload = function() {
 
 <div>Esri Community Maps:<em> OSM community</em></div>
 
-<div>Next week:<em> OSM data</em> in Topo Basemap</div>
+<div><img src="./dakar.jpg"/> <em>OSM data in Esri basemaps </em></div>
+<div><em>Christine</em> White <em>@eggwhites</em></div>
 
 <div><em> Koop</em></div>
 <div>GeoJSON as <em> FeatureServices</em></div>
-<div><em> ETL</em></div>
+<div><img src="./arch.jpeg"/></div>
+
+<div>q: Why should you care?</div>
+
+<div><em>a: ETL</em></div>
 <div><img src="./geocommons.jpeg"/> <em> Geocommons!!</em> </div>
+<div><img src="./AGOD.jpeg"/></div>
 
 <div>ETL <em>for APIs</em></div>
 <div>ETL <em>for Open Data</em></div>
-<div><img src="./AGOD.jpeg" width="200"/></div>
+
+<div>It's about <em>Interoperability</em></div>
+
 <div><em>Github</em> <a target="_blank" href="http://koop.dc.esri.com/github">http://koop.dc.esri.com/github</a></div>
 <div><em>Gists</em> <a target="_blank" href="http://koop.dc.esri.com/gist">http://koop.dc.esri.com/gist</a></div>
 <div><em>Socrata</em> <a target="_blank" href="http://koop.dc.esri.com/socrata">http://koop.dc.esri.com/socrata</a></div>
@@ -113,50 +121,68 @@ window.onload = function() {
 <div>any. geo. <em>api.</em> </div>
 <div>any. geo. <em>data.</em> </div>
 <div>Raw Data?</div>
-<div>Climate Data</div>
+<div>Case: climate data</div>
 <div><img src="./climate1.jpeg"/> <em>vector tiles</em> </div>
 <div><img src="./climate2.jpeg"/> <em>viz'd</em> </div>
 
 <div>Finally <em> OSM</em></div>
 <div>Discovery, exploration, & <em> direct access</em></div>
 <div><em>for </em> end users</div>
+<div><em>for </em> GIS users</div>
 <div>1. Ingest the planet <em> w/osm2pgsql</em></div>
 <div>2. API Structure?</div>
 <div>Counting the data <em> by area</em></div>
 
-<div>Points, Lines, Polygons</div>
-<div><em>Points</em> <a target="_blank" href="http://koop.dc.esri.com/osm/points">http://koop.dc.esri.com/osm/points</a></div>
-<div><em>Lines</em> <a target="_blank" href="http://koop.dc.esri.com/osm/lines">http://koop.dc.esri.com/osm/lines</a></div>
-<div><em>Polygons</em> <a target="_blank" href="http://koop.dc.esri.com/osm/polygons">http://koop.dc.esri.com/osm/polygons</a></div>
+<div><a href="http://koop.dc.esri.com">http://koop.dc.esri.com</a></div>
+
+<div>Find points, lines, polygons</div>
+<div><em>Points</em> <a target="_blank" href="http://koop.dc.esri.com/osm/points">/osm/points</a></div>
+<div><em>Lines</em> <a target="_blank" href="http://koop.dc.esri.com/osm/lines">/osm/lines</a></div>
+<div><em>Polygons</em> <a target="_blank" href="http://koop.dc.esri.com/osm/polygons">/osm/polygons</a></div>
 
 <div>Drilling down...</div>
+<div>indexing</div>
 
-<div><em>Points by </em> State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/count">http://koop.dc.esri.com/osm/points/state/count</a></div>
-<div><em>Points by </em> County <a target="_blank" href="http://koop.dc.esri.com/osm/points/county/count">http://koop.dc.esri.com/osm/points/county/count</a></div>
+<div><em>Points by </em> State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/count">/osm/points/state/count</a></div>
+<div><em>Points by </em> County <a target="_blank" href="http://koop.dc.esri.com/osm/points/county/count">/osm/points/county/count</a></div>
 
-<div>Go further</div>
+<div>a bit further</div>
 
-<div><em>Bus Stations by</em> State <a target="_blank" href="http://localhost:1337/osm/points/state/Colorado?where=amenity=%27pub%27">http://localhost:1337/osm/points/state/Colorado?where=amenity='pub'</a></div>
-<div><em>Bus Stations by</em> State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/bus_station">https://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/bus_station</a></div>
+<div><em>Cafes in a</em> State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado?where=amenity=%27cafe%27">/osm/points
+/state/Colorado?
+where=amenity='cafe'</a></div>
+<div><em>Cafes in a </em> State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/cafe">/osm/points
+/state/Colorado
+/field/amenity/cafe</a></div>
 
-<div>Discovery?</div>
+<div><em>Cafes in a </em> County <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe">/  osm/points
+/state/Colorado
+/county/Boulder
+/field/amenity/cafe</a></div>
 
-<div>Distinct <em>values</em> <a target="_blank" href="http://koop.dc.esri.com/osm/points/distinct/amenity">http://koop.dc.esri.com/osm/points/distinct/amenity</a></div>
+<div>Discovery.</div>
 
-<div>Table <em>fields </em> <a target="_blank" href="http://koop.dc.esri.com/osm/points/fields">http://koop.dc.esri.com/osm/points/fields</a></div>
+<div>Distinct <em>values</em> <a target="_blank" href="http://koop.dc.esri.com/osm/points/distinct/amenity">/osm/points
+/distinct/amenity</a></div>
 
-<div>Access <em>GeoJSON</em></div>
+<div>Table <em>fields </em> <a target="_blank" href="http://koop.dc.esri.com/osm/points/fields">/osm/points
+/fields</a></div>
 
-<div><em>Cafes in </em>Colorado <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/cafe?limit=10">http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/cafe</a></div>
-<div><em>Cafes in </em>Boulder <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe?limit=10">http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe</a></div>
+<div>Access <em>Data</em></div>
 
-<div>piping to geojsonio is <em>the shit</em></div>
+<div><em>Toilets in </em>Portland <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Oregon/county/Multnomah/field/amenity/toilets?limit=50">/osm/points
+/state/Oregon
+/county/Multnomah
+/field/amenity/toilets</a></div>
 
-<div><em>curl</em> <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe?limit=50">http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe?limit=50</a> | <em>geojsonio </em></div>
+<div>Mime types: <em> .kml, .csv, .zip</em></div>
 
-<div>download as <em> .kml, .csv, .zip</em></div>
+<div>Piping to geojsonio is <em>the shit</em></div>
 
-<div>We can also build a UI <a target="_blank" href="http://chelm.github.io/o.skoop.m/">http://chelm.github.io/o.skoop.m/</a></div>
+<div><em>curl</em> <a target="_blank" href="">http://koop.dc.esri.com/osm/points/state/Oregon/county/Multnomah/field/amenity/toilets?limit=50</a> | <em>geojsonio </em></div>
 
+<div>Next</div>
+
+<div>build a UI? <a target="_blank" href="http://chelm.github.io/o.skoop.m/">http://chelm.github.io/o.skoop.m/</a></div>
 <div>Open Source <a target="_blank" href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></div>
 <div><em>me:</em> @cwhelm</div>
