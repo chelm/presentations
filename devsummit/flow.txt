@@ -1,0 +1,49 @@
+
+## Exploring Feature Data in JS 
+
+## or chelm's shmorgesborg of JS Fun 
+
+Intro 
+  Im chelm 
+  Talk about what I do 
+
+Why im giving this talk 
+
+  I like to explore data and find new ways to utilize our services
+  to make map compelling viz
+  think about how we can bring new concepts into the ArcGIS Platform
+  let's drive forward, progress 
+
+Koop 
+
+  background 
+    UC -> github as feature services 
+    I wrote it 
+    Then it became more
+    Tons of potential for bringin in new types of data 
+
+  Walkthrough tabs on koop 
+    Github -> Koop -> leaflet 
+    Socrata, Gist, Climate
+    Exporting feature services 
+      kml, csv, gpkg, shp    
+
+Demo 
+
+  Find live socrata data and show it off in Socrata, then Koop, then leaflet 
+  Access it as a feature service, register in AGOL, perform drive times 
+  Wave hands at the potential (load into Desktop and do nearly anything)
+
+Climate Demo 
+
+  We can turn raw data into pretty things 
+  GRIB2 data into JSON 
+  JSON into GeoJSON into Github (show github clusters)
+  Show all the data 
+  Vector Tiles
+  Gridded interpolation 
+
+  charts? drive charts with the map
+  and time do an array of temps  
+
+ 
