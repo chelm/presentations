@@ -1,0 +1,152 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#FFF;
+  background-size:100%;
+  color:#000;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+  /*background-repeat:no-repeat;*/
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#0090be;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+small{
+  font-size: 0.2em;
+  display: block;
+  line-height: 0.2em;
+}
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:97%;
+}
+
+div.center {
+  text-align:center;
+}
+div.inv {
+  color:#FFF;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div>Cloudant &<em>Esri</em> via <em>Koop</em></div>
+<div><em>me:</em> @cwhelm</em></div>
+
+<div><img src="./vtiles.jpeg"/><em>Esri: makes maps</em></div>
+
+<div><em>ArcGIS:</em> Desktop and Online</div>
+
+<div><em>Koop</em> <a target="_blank" href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></div>
+
+<div>q: Why should you care?</div>
+
+<div><em>a: ETL</em></div>
+
+<div>ETL <em>for APIs</em></div>
+<div>ETL <em>for Open Data</em></div>
+
+<div>Enables the <em>Enterprise</em></div>
+
+<div>Creates <em> FeatureServices</em></div>
+
+<div>ArcGIS consumes <em> FeatureServices</em></div>
+
+<div><em>Interoperability</em></div>
+
+<div>our <em>customers</em> have <em>customers</em></div>
+
+<div><img src="./AGOD.jpeg"/></div>
+
+<div><img src="./koop_arch_new.png"/></div>
+
+
+<div><em>Cloudant</em> <a target="_blank" href="http://koop.dc.esri.com/socrata">http://koop.dc.esri.com/cloudant</a>
+<em>Github</em> <a target="_blank" href="http://koop.dc.esri.com/github">http://koop.dc.esri.com/github</a>
+<em>Gists</em> <a target="_blank" href="http://koop.dc.esri.com/gist">http://koop.dc.esri.com/gist</a>
+<em>Socrata</em> <a target="_blank" href="http://koop.dc.esri.com/socrata">http://koop.dc.esri.com/socrata</a></div>
+
+<div><em>Node.js <em>&</em> PostGIS</em></div>
+<div><em>Open Source</em> <a target="_blank" href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></div>
+<div>Koop in Action</div>
+<div>Climate grids</div>
+<div><img src="./climate1.jpeg"/> <em>vector tiles</em> </div>
+<div><img src="./climate2.jpeg"/>Visualizations</div>
+<div><img src="./windjs.jpeg"/><em>Wind!</em></div>
+
+<div>Geospatial Analysis with <em>Cloudant</em></div>
+<div><img src="./koop_arch_cloudant_flow.png"/></div>
+
+<div><em>Show me</div>
