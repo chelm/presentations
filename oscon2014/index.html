@@ -1,0 +1,195 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#FFF;
+  background-size:100%;
+  color:#000;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+  /*background-repeat:no-repeat;*/
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#0090be;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+small{
+  font-size: 0.2em;
+  display: block;
+  line-height: 0.2em;
+}
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:97%;
+}
+
+div.center {
+  text-align:center;
+}
+div.inv {
+  color:#FFF;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+</style>
+<script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div>OSM & <em>Esri</em> OSCON <em>2014</em></div>
+<div><em>@cwhelm</em></div>
+
+<!-- About ESRI -->
+
+<div>About Esri</div>
+<div><em>Jack</em><img src="http://www.inc.com/uploaded_files/image/970x450/Jack-Dangermond-photo-by-Spencer-Lowell-Inc-Magazine-1725x810_27140.jpg"/></div>
+
+<div><img src="./esri-github.jpeg"/><em></em></div>
+
+<div>The ArcGIS Platform</div>
+<div>Desktop <em>&</em> Server <em>Mapping</em></div>
+
+<div><em>ArcGIS</em> Online</div>
+<div>storage, sharing, collaboration, & analysis </div>
+
+<div><img src="./points.jpeg"/>Points</div>
+<div><img src="./lines.jpeg"/><em>Lines</em></div>
+<div><img src="./polys.jpeg"/><em>Polygons</em></div>
+
+<div><em>FeatureServices</em></div>
+
+<div><img src="./geocommons.jpeg"/></div>
+<div><img src="./agod.jpeg"/></div>
+<div>access data in any <em>format</em> </div>
+
+<div><a target="_blank" href="http://d3.d3.opendata.arcgis.com/"><img src="./opendatata-d3.jpeg"/></a></div>
+
+<div><a target="_blank" href="http://benheb.github.io/explore-open-data/"><img src=""/>http://benheb.github.io/explore-open-data/</a></div>
+
+<div>ETL</div>
+
+<div>Our customers <em>have</em> customers</div>
+
+<div><em>Koop</em> <a target="_blank" href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></div>
+<div>ETL <em>for APIs</em></div>
+<div>Creates <em> FeatureServices</em></div>
+<div>from 3rd party <em>APIs</em></div>
+<div>Exports <em> geojson, kml, csv, shp</em> </div>
+
+<div>node.js, PostGIS</div>
+<div>Modular</div>
+
+<div><em>&nbsp;</em><img src="./koop-arch2.jpeg"/></div>
+
+<div><em>&nbsp;</em><img src="./koop-arch1.jpeg"/></div>
+
+<div>Why Postgresql?</div>
+<div>
+  1. PostGIS <br/>
+  2. JSON
+</div>
+
+<div><img src="./koop-github.jpeg"/></div>
+<div><img src="./chelm-github.jpeg"/></div>
+<div><img src="./cloudant-github.jpeg"/></div>
+
+<div>AWS, chef, Opsworks</div>
+
+<div>Also it's <em>R & D</em></div>
+<div><img src="./vtiles.jpeg"/> <em> Vector Tiles </em></div>
+<div>Rapid development in the <em>open</em></div>
+<div>any. geo. <em>api.</em> </div>
+<div>any. geo. <em>data.</em> </div>
+
+<div><em>&nbsp;</em><img src="./koop-arch1.jpeg"/></div>
+
+<div><img src="./osm.jpeg"/></div>
+<div>Koop + <em>OSM</em> = Discovery, exploration, & <em> direct access</em></div>
+<div><em>for </em> end users</div>
+<div><em>for </em> GIS users</div>
+
+<div><em>Cafes in a </em> State <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/field/amenity/cafe">/osm/points
+/state/Colorado
+/field/amenity/cafe</a></div>
+
+<div><em>Cafes in a </em> County <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Colorado/county/Boulder/field/amenity/cafe">/osm/points
+/state/Colorado
+/county/Boulder
+/field/amenity/cafe</a></div>
+
+<div><em>Toilets in </em>Portland <a target="_blank" href="http://koop.dc.esri.com/osm/points/state/Oregon/county/Multnomah/field/amenity/toilets?limit=50">/osm/points
+/state/Oregon
+/county/Multnomah
+/field/amenity/toilets</a></div>
+
+<div><em>curl </em> <a target="_blank" href="">http://koop.dc.esri.com/osm/points/state/Oregon/county/Multnomah/field/amenity/toilets?limit=50</a> | <em>geojsonio </em> </div>
+
+<div>Demo OSM<a target="_blank" href="http://chelm.github.io/o.skoop.m/">http://chelm.github.io/o.skoop.m/</a></div>
+<div>@cwhelm</div>
