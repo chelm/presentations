@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Koop - devsummit tech talk</title>
+
+		<meta name="description" content="A talk on koop">
+		<meta name="author" content="Chris Helm">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Koop</h1>
+					<h3>FeatureServices from Anywhere</h3>
+					<p>
+						<small>Chris Helm / <a href="http://twitter.com/@cwhelm">@cwhelm</a></small>
+					</p>
+				</section>
+
+        <section>
+          <h2>The Plan</h2>
+          <ul>
+            <li>Koop at High Level<li>
+            <li>Anatomy of the Koop System<li>
+            <li>How we use Koop in production<li>
+            <li>The future<li>
+          </ul>
+        </section>
+
+				<section>
+          <section>
+					  <h2>High Level</h2>
+					  <p>What is Koop?</p>
+          </section>
+          <section>
+            <h2>Node.js Module</h2>
+          </section>
+          <section>
+            <h2>FeatureServices from APIs</h2>
+          </section>
+          <section>
+            <h2>FeatureServices from Other People's Data</h2>
+          </section>
+          <section>
+            <h2>FeatureServices from Any Data</h2>
+          </section>
+          <section>
+            <h2>ETL for APIs</h2>
+          </section>
+          <section>
+            <h2>Koop Providers</h2>
+            <p>{image of providers}</p>
+          </section>
+				</section>
+
+        <section>
+          <h2>Open Source!</h2>
+          <p><a href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></p>
+        </section>
+
+        <section>
+          <h2>Demo Socrata Example</h2>
+          <ul>
+            <li>Show Socrata</li>
+            <li>in koop/json preview</li>
+            <li>in koop/preview</li>
+            <li>in AGO</li>
+            <li>show analysis in AGO</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>How does Koop work</h2>
+          </section>
+          <section>
+            <h2>Architecture {diagram}</h2>
+            <p>many small node.js modules</p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Providers</h2>
+          <p>plugable API adaptation</p>
+        </section>
+
+        <section>
+          <h2>The Koop Cache</h2>
+          <p>data storage for features</p>
+          <section>
+            <ul>
+              <li>PostGIS</li>
+              <li>Spatialite</li>
+              <li>memory</li>
+            </ul>
+          </section>
+        </section>
+
+				<section>
+					<section>
+						<h2>FeatureServices</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Central logic</h2>
+						<p></p>
+					</section>
+					<section>
+						<h2>Support for Geo queries</h2>
+					</section>
+				</section>
+				
+        <section>
+					<h2>File Exports</h2>
+          <ul>
+            <li>Shapefile</li>
+            <li>CSV</li>
+            <li>GeoJSON</li>
+            <li>KML</li>
+          </ul>
+				</section>
+
+        <section>
+          <section>
+            <h2>Deploying Koop</h2>
+          </section>
+          <section>
+            <h2>Many small pieces</h2>
+            <p>little node modules</p>
+          </section>
+          <section>
+            <h2>Express Middleware</h2>
+          </section>
+          <section>
+            <h2>App deployment</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>How we deploy Koop</h2>
+          </section>
+          <section>
+            <h2>AWS / Opsworks </h2>
+          </section>
+          <section>
+            <h2>Workers</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Deploy to Heroku</h2>
+          </section>
+          <section>
+            <h2>Demo Herkou deploy? live?</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Data Tiles</h2>
+          </section>
+           <section>
+            <h2>PNG, GeoJSON, UTF, Protobuf </h2>
+          </section> 
+        </section>
+
+        
+
+				<!--section>
+					<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section-->
+
+
+				<!--section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section-->
+
+				<!--section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					</p>
+				</section-->
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
