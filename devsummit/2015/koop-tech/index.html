@@ -51,10 +51,10 @@
         <section>
           <h2>The Plan</h2>
           <ul>
-            <li>Koop at High Level<li>
-            <li>Anatomy of the Koop System<li>
-            <li>How we use Koop in production<li>
-            <li>The future<li>
+            <li>Koop at a high Level</li>
+            <li>Anatomy of the Koop System</li>
+            <li>Using Koop in production</li>
+            <li>The future</li>
           </ul>
         </section>
 
@@ -62,6 +62,10 @@
           <section>
 					  <h2>High Level</h2>
 					  <p>What is Koop?</p>
+          </section>
+          <section>
+            <h2>Open Source!</h2>
+            <p><a href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></p>
           </section>
           <section>
             <h2>Node.js Module</h2>
@@ -78,15 +82,60 @@
           <section>
             <h2>ETL for APIs</h2>
           </section>
-          <section>
-            <h2>Koop Providers</h2>
-            <p>{image of providers}</p>
-          </section>
 				</section>
 
         <section>
-          <h2>Open Source!</h2>
-          <p><a href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></p>
+          <h2>ArcGIS Open Data</h2>
+          <p>Koop powers downloads!</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Node.js Modules</h2>
+					  <p>Small libraries for specific things</p>
+          </section>
+          <section>
+            <h2>NPM</h2>
+            <p><code>npm install koop</code></p>
+          </section>
+          <section>
+            <h2>A constellation of Modules</h2>
+            <p>{Architecture Diagram}</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Terminology</h2>
+          </section>
+          <section>
+            <h2>The "Koop" module</h2>
+            <ul>
+              <li>Central</li>
+              <li>in koop/json preview</li>
+            <p></p>
+          </section>
+           <section>
+            <h2>"Providers"</h2>
+            <ul>
+              <li>Central</li>
+              <li>in koop/json preview</li>
+            <p></p>
+          </section>
+          <section>
+            <h2>"The Cache"</h2>
+            <ul>
+              <li>Central</li>
+              <li>in koop/json preview</li>
+            <p></p>
+          </section>
+          <section>
+            <h2>"A Koop Application"</h2>
+            <ul>
+              <li>a deployable app</li>
+              <li>aggregates modules into a single unit</li>
+            <p></p>
+          </section>
         </section>
 
         <section>
@@ -105,19 +154,21 @@
             <h2>How does Koop work</h2>
           </section>
           <section>
-            <h2>Architecture {diagram}</h2>
+            <h2>Architecture {diagram again}</h2>
             <p>many small node.js modules</p>
           </section>
         </section>
 
         <section>
-          <h2>Providers</h2>
+          <h2>Koop Providers</h2>
           <p>plugable API adaptation</p>
+          <p> talk to APIs </p>
+          <p> list all the providers </p>
         </section>
 
         <section>
           <h2>The Koop Cache</h2>
-          <p>data storage for features</p>
+          <p>store features</p>
           <section>
             <ul>
               <li>PostGIS</li>
@@ -129,20 +180,21 @@
 
 				<section>
 					<section>
-						<h2>FeatureServices</h2>
+						<h2>Koop Core</h2>
 						<p></p>
 					</section>
 					<section>
 						<h2>Central logic</h2>
-						<p></p>
+						<p>shared code for providers to tap into</p>
 					</section>
 					<section>
-						<h2>Support for Geo queries</h2>
+						<h2>GeoServices Rest</h2>
 					</section>
 				</section>
 				
         <section>
 					<h2>File Exports</h2>
+          <p>aka ogr2ogr</p>
           <ul>
             <li>Shapefile</li>
             <li>CSV</li>
@@ -150,6 +202,10 @@
             <li>KML</li>
           </ul>
 				</section>
+
+        <section>
+          <h2>Demo File access</h2>
+        </section>
 
         <section>
           <section>
@@ -170,12 +226,14 @@
         <section>
           <section>
             <h2>How we deploy Koop</h2>
+            <p>In ArcGIS Open Data</p>
           </section>
           <section>
             <h2>AWS / Opsworks </h2>
           </section>
           <section>
             <h2>Workers</h2>
+            <p>{worker diagram}</p>
           </section>
         </section>
 
@@ -189,15 +247,32 @@
         </section>
 
         <section>
+          <h2>Research Time</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>Koop & OpenStreetMap</h2>
+            <a target="_blank" href="http://chelm.github.io/o.skoop.m/">OSM DEMO</a>
+          </section>
+        </section>
+
+        <section>
           <section>
             <h2>Data Tiles</h2>
           </section>
            <section>
             <h2>PNG, GeoJSON, UTF, Protobuf </h2>
-          </section> 
+            <a target="_blank" href="http://chelm.github.io/o.skoop.m/">Tile Demos</a>
+          </section>
+           
         </section>
 
+        <section>
+          <h2>Rate my talk</h2>
+        </section>
         
+
 
 				<!--section>
 					<h2>Pretty Code</h2>
