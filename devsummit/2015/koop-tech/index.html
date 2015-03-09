@@ -46,6 +46,7 @@
 					<p>
 						<small>Chris Helm / <a href="http://twitter.com/@cwhelm">@cwhelm</a></small>
 					</p>
+          <aside class="notes"></aside>
 				</section>
 
         <section>
@@ -56,19 +57,15 @@
             <li>Using Koop in production</li>
             <li>The future</li>
           </ul>
+          <aside class="notes">
+            Give an overview of what we're going to go through. Tell them that my goals is to 3 fold: Convince them that koop is something that matters, how koop works, and show them some of the features we're thinking about.Talks like this are important for me to give, they force me to document what we've built and help people inside and outside the company understand.
+          </aside>
         </section>
 
 				<section>
           <section>
 					  <h2>High Level</h2>
 					  <p>What is Koop?</p>
-          </section>
-          <section>
-            <h2>Open Source!</h2>
-            <p><a href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></p>
-          </section>
-          <section>
-            <h2>Node.js Module</h2>
           </section>
           <section>
             <h2>FeatureServices from APIs</h2>
@@ -82,16 +79,30 @@
           <section>
             <h2>ETL for APIs</h2>
           </section>
+          <section>
+            <h2>Open Source!</h2>
+            <p><a href="https://github.com/Esri/koop">https://github.com/Esri/koop</a></p>
+          </section>
+          <section>
+            <h2>Node.js Module</h2>
+          </section>
+          <aside class="notes">Okay. For the next little while we are going to be running thru a forest of awesome. There will be words and terms and ideas that may sound strange, but I can asure you they are in fact, awesome. So to make we realy understand how this system works, we're going to actually run through the forest of awesome a few times during the talk. the effect will be much awesome imprinted on your brains forever.</aside>
 				</section>
+
+        <section>
+          <h2>Why does Koop exist?</h2>
+          <aside class="notes">Our customers have customers, and interoperablity is crucial in an ever changing world of data access and requirements. Nothing should block users from using data in the ArcGIS Platform.</aside>
+        </section>
 
         <section>
           <h2>ArcGIS Open Data</h2>
           <p>Koop powers downloads!</p>
+          <aside class="notes">Koop may not have actually started with the goal of powering Open Data's exports, but it found home there. Somewhere it was needed and has proven itself useful as a way normalizing data access across many versions of ArcGIS Server. Using koop we can create a common experience across all Server versions, from hosted to 9.* - Koop speaks </aside>
         </section>
 
         <section>
           <section>
-            <h2>Node.js Modules</h2>
+            <h2>Node.js Module(s)</h2>
 					  <p>Small libraries for specific things</p>
           </section>
           <section>
@@ -100,42 +111,77 @@
           </section>
           <section>
             <h2>A constellation of Modules</h2>
-            <p>{Architecture Diagram}</p>
+            <p>{Architecture Diagram --- TODO show full ARCH}</p>
           </section>
+          <aside class="notes"> Koop is a constellation of modules that can act as stand alone libraries or when deployed together form a set of data access APIs that can be highly customed to any particular use case. </aside>
         </section>
 
         <section>
           <section>
-            <h2>Terminology</h2>
+            <h2>Vocabularly</h2>
           </section>
           <section>
             <h2>The "Koop" module</h2>
             <ul>
-              <li>Central</li>
-              <li>in koop/json preview</li>
-            <p></p>
+              <li>A central data cache (database)</li>
+              <li>Shared logic for GeoService's REST</li>
+              <li>Speaks GeoJSON</li>
+              <li>Exposes Express.js Middleware</li>
+            </ul>
           </section>
-           <section>
+          <section>
             <h2>"Providers"</h2>
             <ul>
-              <li>Central</li>
-              <li>in koop/json preview</li>
-            <p></p>
+              <li>Speak to APIs</li>
+              <li>define routes</li>
+              <li>rules for parsing data from an API</li>
+              <li>when to expire the cache</li>
+              <li>akin to MVC</li>
+            </ul>
+          </section>
+          <section>
+					  <pre>
+              <code data-trim contenteditable>
+                {socrata json format}
+              </code>
+            </pre>
+          </section>
+          <section>
+					  <pre>
+              <code data-trim contenteditable>
+                {geojson format}
+              </code>
+            </pre>
           </section>
           <section>
             <h2>"The Cache"</h2>
             <ul>
-              <li>Central</li>
-              <li>in koop/json preview</li>
-            <p></p>
+              <li>Store data in GeoJSON</li>
+              <li>PostgreSQL</li>
+              <li>Spatialite</li>
+              <li>etc, etc...</li>
+            </ul>
           </section>
           <section>
             <h2>"A Koop Application"</h2>
             <ul>
               <li>a deployable app</li>
               <li>aggregates modules into a single unit</li>
-            <p></p>
+              <li>one/many providers sitting on top of a cache</li>
+              <li><a href="">The Koop Sample Application</a></li>
+            </ul>
           </section>
+          <aside class="notes">Explain the various peices of the system. More parts is hard to develop and understand, but ultimately more pliable and usable.</aside>
+        </section>
+
+        <section>
+          <h2>Architecture diagram, again</h2>
+          <aside class="notes">{TODO 1: FULL ARCH} Show the providers, caches, in a composed system</aside>
+        </section>
+
+        <section>
+          <h2>Example: Socrata</h2>
+          <aside class="notes">{TODO 2: Socrata ARCH} Show the data flow from the user request for a feature service to Socrata and back thru koop. Stored a geojson until we expire the cache or decide to drop it.</aside>
         </section>
 
         <section>
@@ -147,6 +193,7 @@
             <li>in AGO</li>
             <li>show analysis in AGO</li>
           </ul>
+          <aside class="notes"></aside>
         </section>
 
         <section>
@@ -157,13 +204,44 @@
             <h2>Architecture {diagram again}</h2>
             <p>many small node.js modules</p>
           </section>
+          <aside class="notes"> Start explaining how each piece works...showing code</aside>
         </section>
 
         <section>
-          <h2>Koop Providers</h2>
-          <p>plugable API adaptation</p>
-          <p> talk to APIs </p>
-          <p> list all the providers </p>
+          <section>
+            <h2>Koop Providers</h2>
+            <ul>
+            <li> API adaptation</li>
+            <li> talk to APIs </li>
+            </ul>
+          </section>
+          <section>
+            <h2>The Koop Sample Provider</h2>
+          </section>
+          <section>
+            <h2>Routes</h2>
+            <code> var routes = {
+              ":method :route": HandlerFn,
+              "get /socrata/:id": getSocrataData 
+            };</code>
+          </section>
+          <section>
+            <h2>Controllers</h2>
+            <p> handle requests / responses </p>
+            <p> talk to the model </p>
+          </section>
+          <section>
+            <h2>Models</h2>
+            <p> talk to APIs  </p>
+            <p> talk to the Koop Cache </p>
+            <p> return geojson to Controllers</p>
+          </section>
+          
+          <section>
+            <li> list all the providers </li>
+          </section>
+          <aside class="notes">The anatomy of a provider. The pattern is the key, let's us build many custom providers from the least amount of code.</aside>
+
         </section>
 
         <section>
@@ -176,6 +254,7 @@
               <li>memory</li>
             </ul>
           </section>
+          <aside class="notes">Cache is completely optional, and spatially enabled is optional. Just need a place to centralize access and avoid thrashing APIs with limits. Provider models can return data w/o ever knowing a cache exists or not.</aside>
         </section>
 
 				<section>
@@ -190,6 +269,7 @@
 					<section>
 						<h2>GeoServices Rest</h2>
 					</section>
+          <aside class="notes">CSV parsing tools, esri json to geojson conversions, etc.</aside>
 				</section>
 				
         <section>
@@ -201,10 +281,12 @@
             <li>GeoJSON</li>
             <li>KML</li>
           </ul>
+          <aside class="notes"></aside>
 				</section>
 
         <section>
           <h2>Demo File access</h2>
+          <aside class="notes">...maybe skip this...</aside>
         </section>
 
         <section>
@@ -219,8 +301,11 @@
             <h2>Express Middleware</h2>
           </section>
           <section>
-            <h2>App deployment</h2>
+            <p>AWS</p>
+            <p>Heroku</p>
+            <p>Openshift, etc.</p>
           </section>
+          <aside class="notes"> Koop can be deployed anywhere node.js is supported.</aside>
         </section>
 
         <section>
@@ -230,24 +315,23 @@
           </section>
           <section>
             <h2>AWS / Opsworks </h2>
+            <p>Use chef to setup servers, checkout code, etc...</p>
           </section>
+          <section>
+            <h2>Scaling Koop</h2>
+            <p>via distributed servers</p>
+          </section>
+          
           <section>
             <h2>Workers</h2>
             <p>{worker diagram}</p>
           </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>Deploy to Heroku</h2>
-          </section>
-          <section>
-            <h2>Demo Herkou deploy? live?</h2>
-          </section>
+          <aside class="notes">TODO #4 - create the deployed architecture</aside>
         </section>
 
         <section>
           <h2>Research Time</h2>
+          <aside class="notes">How far can we take koop, in what ways does this system help us acheive customer goals, and can it provide new ways of thinking about data access </aside>
         </section>
 
         <section>
@@ -255,6 +339,7 @@
             <h2>Koop & OpenStreetMap</h2>
             <a target="_blank" href="http://chelm.github.io/o.skoop.m/">OSM DEMO</a>
           </section>
+          <aside class="notes">Can koop make Open Street Map more accessible to Esri/GIS users?</aside>
         </section>
 
         <section>
@@ -265,11 +350,12 @@
             <h2>PNG, GeoJSON, UTF, Protobuf </h2>
             <a target="_blank" href="http://chelm.github.io/o.skoop.m/">Tile Demos</a>
           </section>
-           
+          <aside class="notes">Vector Tiles are the future for access multilayer raw data on clients. </aside>
         </section>
 
         <section>
           <h2>Rate my talk</h2>
+          <aside class="notes">Must find the preso link for rating the talks</aside>
         </section>
         
 
