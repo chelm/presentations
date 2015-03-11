@@ -90,35 +90,45 @@
 				</section>
 
         <section>
-          <h2>Why does Koop exist?</h2>
-          <aside class="notes">Our customers have customers, and interoperablity is crucial in an ever changing world of data access and requirements. Nothing should block users from using data in the ArcGIS Platform.</aside>
+          <section>
+            <h2>Why does Koop exist?</h2>
+            <aside class="notes">Our customers have customers, and interoperablity is crucial in an ever changing world of data access and requirements. Nothing should block users from using data in the ArcGIS Platform.</aside>
+          </section>
+          <section>
+            <p>What if <a href="https://github.com/chelm/geodata/blob/master/ski_areas.geojson">github geojson</a> could be <a href="http://koop.dc.esri.com/github/chelm/geodata/ski_areas/FeatureServer/0">featureservices?</a></p>  
+          </section>
+          
+          <section>
+            <p><a href="http://www.arcgis.com/home/webmap/viewer.html?url=http://koop.dc.esri.com/github/chelm/geodata/ski_areas/FeatureServer/0" target="_blank">We can do things like this...</a></p>  
+          </section>
         </section>
 
         <section>
           <h2>ArcGIS Open Data</h2>
           <p>Koop powers downloads!</p>
+          <img src="images/opendata.png"/>
           <aside class="notes">Koop may not have actually started with the goal of powering Open Data's exports, but it found home there. Somewhere it was needed and has proven itself useful as a way normalizing data access across many versions of ArcGIS Server. Using koop we can create a common experience across all Server versions, from hosted to 9.* - Koop speaks </aside>
         </section>
 
         <section>
           <section>
-            <h2>Node.js Module(s)</h2>
-					  <p>Small libraries for specific things</p>
+            <h2>How does Koop work</h2>
           </section>
           <section>
-            <h2>NPM</h2>
-            <p><code>npm install koop</code></p>
+            <img src="images/koop_arch.png">
           </section>
-          <section>
-            <h2>A constellation of Modules</h2>
-            <p>{Architecture Diagram --- TODO show full ARCH}</p>
-          </section>
-          <aside class="notes"> Koop is a constellation of modules that can act as stand alone libraries or when deployed together form a set of data access APIs that can be highly customed to any particular use case. </aside>
-        </section>
+          <aside class="notes"></aside>
+        </section> 
 
         <section>
           <section>
             <h2>Vocabularly</h2>
+            <ul>
+              <li>koop</li>
+              <li>providers</li>
+              <li>the cache</li>
+              <li>koop applications</li>
+            </ul>
           </section>
           <section>
             <h2>The "Koop" module</h2>
@@ -140,16 +150,47 @@
             </ul>
           </section>
           <section>
+            <p><a target="_blank" href="https://data.wa.gov/resource/bbfi-8qfv.json">Socrata JSON</a></p>
 					  <pre>
               <code data-trim contenteditable>
-                {socrata json format}
+[{
+  number_of_students: "40",
+  school: "Asotin Jr. High",
+  county: "Asotin",
+  grade: "10",
+  location_1: {
+    needs_recoding: false,
+    longitude: "-117.04779000040804",
+    latitude: "46.34058000006712",
+    human_address: "{"address":"","city":"Asotin","state":"WA","zip":""}"
+  }
+},
+
+...]
               </code>
             </pre>
           </section>
           <section>
+            <p><a targt="_blank" href="http://koop.dc.esri.com/socrata/wastate/bbfi-8qfv">GeoJSON</a></p>
 					  <pre>
               <code data-trim contenteditable>
-                {geojson format}
+{
+  type: "Feature",
+  geometry: {
+    coordinates: [
+      -117.04,
+      46.34
+    ],
+    type: "Point",
+  }
+  id: 1,
+  properties: {
+    number_of_students: "40",
+    school: "Asotin Jr. High",
+    county: "Asotin",
+    grade: "10"
+  }
+}
               </code>
             </pre>
           </section>
@@ -168,16 +209,24 @@
               <li>a deployable app</li>
               <li>aggregates modules into a single unit</li>
               <li>one/many providers sitting on top of a cache</li>
-              <li><a href="">The Koop Sample Application</a></li>
+              <li><a href="https://github.com/chelm/koop-sample-app">A Sample Application</a></li>
             </ul>
           </section>
-          <aside class="notes">Explain the various peices of the system. More parts is hard to develop and understand, but ultimately more pliable and usable.</aside>
+          <aside class="notes">Explain the various peices of the system. More parts make it harder to develop and understand, but ultimately more pliable and usable.</aside>
         </section>
 
         <section>
-          <h2>Architecture diagram, again</h2>
-          <aside class="notes">{TODO 1: FULL ARCH} Show the providers, caches, in a composed system</aside>
+          <section>
+            <h2>Architecture diagram, again</h2>
+            <img src="images/koop_arch2.png">
+            <aside class="notes"> ARCH} Show the providers, caches, in a composed system</aside>
+          </section>
+          <section>
+            <img src="images/koop_bubbles.png">
+            <aside class="notes"> ARCH} Show the providers, caches, in a composed system</aside>
+          </section>
         </section>
+            
 
         <section>
           <h2>Example: Socrata</h2>
@@ -198,13 +247,18 @@
 
         <section>
           <section>
-            <h2>How does Koop work</h2>
+            <h2>Node.js Module(s)</h2>
+            <p>Small libraries for specific things</p>
           </section>
           <section>
-            <h2>Architecture {diagram again}</h2>
-            <p>many small node.js modules</p>
+            <h2>NPM</h2>
+            <p><code>npm install koop</code></p>
           </section>
-          <aside class="notes"> Start explaining how each piece works...showing code</aside>
+          <section>
+            <h2>A constellation of Modules</h2>
+            <img src="images/node-mods.png"/>
+          </section>
+          <aside class="notes"> Koop is a constellation of modules that can act as stand alone libraries or when deployed together form a    set of data access APIs that can be highly customed to any particular use case. </aside>
         </section>
 
         <section>
@@ -220,10 +274,17 @@
           </section>
           <section>
             <h2>Routes</h2>
-            <code> var routes = {
-              ":method :route": HandlerFn,
-              "get /socrata/:id": getSocrataData 
-            };</code>
+            <pre><code> 
+  var routes = {
+
+    ":method :route": HandlerFn,
+
+    "get /socrata/:id": getData,
+
+    "get /socrata/:id/FeatureServer/*": getFeatureServer
+
+  };
+            </code></pre>
           </section>
           <section>
             <h2>Controllers</h2>
