@@ -48,6 +48,10 @@
 					</p>
           <aside class="notes"></aside>
 				</section>
+        
+        <section>
+          <h2><a href="http://www.esri.com/events/session-rater?id=90#18995">Rate my talk</a></h2>
+        </section>
 
         <section>
           <h2>The Plan</h2>
@@ -74,9 +78,6 @@
             <h2>FeatureServices from Other People's Data</h2>
           </section>
           <section>
-            <h2>FeatureServices from Any Data</h2>
-          </section>
-          <section>
             <h2>ETL for APIs</h2>
           </section>
           <section>
@@ -101,13 +102,25 @@
           <section>
             <p><a href="http://www.arcgis.com/home/webmap/viewer.html?url=http://koop.dc.esri.com/github/chelm/geodata/ski_areas/FeatureServer/0" target="_blank">We can do things like this...</a></p>  
           </section>
+
+          <section>
+            <p>Also becuase our customers have customers</p>
+          </section>
         </section>
 
         <section>
-          <h2>ArcGIS Open Data</h2>
-          <p>Koop powers downloads!</p>
-          <img src="images/opendata.png"/>
-          <aside class="notes">Koop may not have actually started with the goal of powering Open Data's exports, but it found home there. Somewhere it was needed and has proven itself useful as a way normalizing data access across many versions of ArcGIS Server. Using koop we can create a common experience across all Server versions, from hosted to 9.* - Koop speaks </aside>
+          <section>
+            <h2>ArcGIS Open Data</h2>
+            <img src="images/opendata1.png"/>
+          </section>
+
+          <section>
+            <img src="images/opendata.png"/>
+            <aside class="notes">Koop may not have actually started with the goal of powering Open Data's exports, but it found home there. Somewhere it was needed and has proven itself useful as a way normalizing data access across many versions of ArcGIS Server. Using koop we can create a common experience across all Server versions, from hosted to 9.* - Koop speaks </aside>
+          </section>
+          <section>
+            <h2>Node.js in production</h2>
+          </section>
         </section>
 
         <section>
@@ -171,7 +184,7 @@
             </pre>
           </section>
           <section>
-            <p><a targt="_blank" href="http://koop.dc.esri.com/socrata/wastate/bbfi-8qfv">GeoJSON</a></p>
+            <p><a target="_blank" href="http://koop.dc.esri.com/socrata/wastate/bbfi-8qfv">GeoJSON</a></p>
 					  <pre>
               <code data-trim contenteditable>
 {
@@ -209,7 +222,7 @@
               <li>a deployable app</li>
               <li>aggregates modules into a single unit</li>
               <li>one/many providers sitting on top of a cache</li>
-              <li><a href="https://github.com/chelm/koop-sample-app">A Sample Application</a></li>
+              <li><a target="_blank" href="https://github.com/chelm/koop-sample-app">A Sample Application</a></li>
             </ul>
           </section>
           <aside class="notes">Explain the various peices of the system. More parts make it harder to develop and understand, but ultimately more pliable and usable.</aside>
@@ -229,30 +242,17 @@
             
 
         <section>
-          <h2>Example: Socrata</h2>
+          <h2>Demo Socrata Example</h2>
           <aside class="notes">{TODO 2: Socrata ARCH} Show the data flow from the user request for a feature service to Socrata and back thru koop. Stored a geojson until we expire the cache or decide to drop it.</aside>
         </section>
 
         <section>
-          <h2>Demo Socrata Example</h2>
-          <ul>
-            <li>Show Socrata</li>
-            <li>in koop/json preview</li>
-            <li>in koop/preview</li>
-            <li>in AGO</li>
-            <li>show analysis in AGO</li>
-          </ul>
-          <aside class="notes"></aside>
-        </section>
-
-        <section>
           <section>
-            <h2>Node.js Module(s)</h2>
-            <p>Small libraries for specific things</p>
+            <h2>Node.js</h2>
           </section>
           <section>
             <h2>NPM</h2>
-            <p><code>npm install koop</code></p>
+            <p><code>npm install koop*</code></p>
           </section>
           <section>
             <h2>A constellation of Modules</h2>
@@ -263,14 +263,11 @@
 
         <section>
           <section>
-            <h2>Koop Providers</h2>
-            <ul>
-            <li> API adaptation</li>
-            <li> talk to APIs </li>
-            </ul>
+            <h2>Providers</h2>
+            <p>API adaptation</p>
           </section>
           <section>
-            <h2>The Koop Sample Provider</h2>
+            <h2><a href="https://github.com/chelm/koop-sample-provider" target="_blank">The Koop Sample Provider</a></h2>
           </section>
           <section>
             <h2>Routes</h2>
@@ -299,16 +296,21 @@
           </section>
           
           <section>
-            <li> list all the providers </li>
+            <p><a href="https://github.com/chelm/koop-github" target="_blank">koop-github</a></p>
+            <p><a href="https://github.com/chelm/koop-gist" target="_blank">koop-gist</a></p>
+            <p><a href="https://github.com/chelm/koop-socrata" target="_blank">koop-socrata</a></p>
+            <p><a href="https://github.com/chelm/koop-ckan" target="_blank">koop-ckan</a></p>
+            <p><a href="https://github.com/chelm/koop-vrbo" target="_blank">koop-vrbo</a></p>
+            <p><a href="https://github.com/Esri/koop-agol" target="_blank">koop-agol</a></p>
           </section>
           <aside class="notes">The anatomy of a provider. The pattern is the key, let's us build many custom providers from the least amount of code.</aside>
 
         </section>
 
         <section>
-          <h2>The Koop Cache</h2>
-          <p>store features</p>
           <section>
+            <h2>The Koop Cache</h2>
+            <p>store features, and makes koop friendly</p>
             <ul>
               <li>PostGIS</li>
               <li>Spatialite</li>
@@ -320,7 +322,7 @@
 
 				<section>
 					<section>
-						<h2>Koop Core</h2>
+						<h2><a href="https://github.com/Esri/koop/tree/master/lib" target="_blank">Koop Core</a></h2>
 						<p></p>
 					</section>
 					<section>
@@ -334,45 +336,60 @@
 				</section>
 				
         <section>
-					<h2>File Exports</h2>
-          <p>aka ogr2ogr</p>
-          <ul>
-            <li>Shapefile</li>
-            <li>CSV</li>
-            <li>GeoJSON</li>
-            <li>KML</li>
-          </ul>
-          <aside class="notes"></aside>
+          <section>
+					  <h2>File Exports</h2>
+            <p>aka ogr2ogr</p>
+            <ul>
+              <li><a target="_blank" href="http://localhost:1337/socrata/wastate/42qd-frvg.zip">Shapefile</a></li>
+              <li><a target="_blank" href="http://localhost:1337/socrata/wastate/42qd-frvg.csv">CSV</a></li>
+              <li><a target="_blank" href="http://localhost:1337/socrata/wastate/42qd-frvg.json">GeoJSON</a></li>
+              <li><a target="_blank" href="http://localhost:1337/socrata/wastate/42qd-frvg.kml">KML</a></li>
+            </ul>
+            <aside class="notes">Talk about more formats... like FGDB, GeoPackage</aside>
+          </section>
 				</section>
 
         <section>
-          <h2>Demo File access</h2>
-          <aside class="notes">...maybe skip this...</aside>
-        </section>
-
-        <section>
           <section>
-            <h2>Deploying Koop</h2>
+            <h2>Challenges in Deploying Koop</h2>
           </section>
           <section>
-            <h2>Many small pieces</h2>
+            <h2>Small pieces, many versions</h2>
             <p>little node modules</p>
           </section>
           <section>
-            <h2>Express Middleware</h2>
+            <h2>Need to aggregate modules</h2>
           </section>
           <section>
-            <p>AWS</p>
-            <p>Heroku</p>
-            <p>Openshift, etc.</p>
+            <h2>Many platforms...</h2>
+            <ul>
+              <li>AWS</li>
+              <li>Heroku</li>
+              <li>Openshift, etc.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Must work on windows</h2>
           </section>
           <aside class="notes"> Koop can be deployed anywhere node.js is supported.</aside>
         </section>
 
         <section>
           <section>
+            <h2>NPM install EVERYTHING</h2>
+          </section>
+          <section>
+            <h2><a target="_blank" href="https://github.com/chelm/koop-sample-app">koop-sample-app</a></h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h2>How we deploy Koop</h2>
-            <p>In ArcGIS Open Data</p>
+            <p>in ArcGIS Open Data</p>
+          </section>
+          <section>
+            <img src="images/koop_deploy1.png" />
           </section>
           <section>
             <h2>AWS / Opsworks </h2>
@@ -380,14 +397,36 @@
           </section>
           <section>
             <h2>Scaling Koop</h2>
-            <p>via distributed servers</p>
+            <p>distributed servers</p>
           </section>
           
           <section>
             <h2>Workers</h2>
-            <p>{worker diagram}</p>
+            <img src="images/koop_workers.png" />
           </section>
-          <aside class="notes">TODO #4 - create the deployed architecture</aside>
+          
+          <section>
+            <pre><code>
+  "export_workers":{
+    "redis": {
+      "prefix":"export-q",
+      "port":6379,
+      "host":"127.0.0.1"
+    }
+  },
+  "agol":{
+    "request_workers": {
+      "redis": {
+        "prefix":"q",
+        "port":6379,
+        "host":"127.0.0.1"
+      }
+    }
+  } 
+            </code></pre>
+          </section>
+
+          <aside class="notes">create the deployed architecture workers</aside>
         </section>
 
         <section>
@@ -409,15 +448,11 @@
           </section>
            <section>
             <h2>PNG, GeoJSON, UTF, Protobuf </h2>
-            <a target="_blank" href="http://chelm.github.io/o.skoop.m/">Tile Demos</a>
+            <a target="_blank" href="http://chelm.github.io/vector-tile-layer/">Tile Demos</a>
           </section>
           <aside class="notes">Vector Tiles are the future for access multilayer raw data on clients. </aside>
         </section>
 
-        <section>
-          <h2>Rate my talk</h2>
-          <aside class="notes">Must find the preso link for rating the talks</aside>
-        </section>
         
 
 
