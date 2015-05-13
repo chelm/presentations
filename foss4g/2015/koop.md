@@ -1,0 +1,3 @@
+Koop - Data is Life, and Life is Awesome
+
+Data is the currency of the geospatial industry. APIs and data standards are the tools by which we exchange data. However, there are always going to be new and different standards, different APIs, and new ways of sharing data.  Koop is an entirely open source ETL Engine for APIs. Currently Koop is being used in production for Esri's ArcGIS Open Data product, and is being used to drive R&D around visualizating data. In this talk we'll discuss why and how we've built Koop, and how its enabled our customers a great power over how they access and share thier data and consume data from new places.  
